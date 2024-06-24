@@ -27,7 +27,7 @@ const Menu: React.FC = () => {
                     {blips.length > 0 && blips.map(({ label, id, enabled }) => (
                         <Group w="100%" style={{ display: 'flex', justifyContent: 'space-between', padding: 5, backgroundColor: theme.colors.dark[7], borderRadius: theme.radius.sm, marginBottom: 5 }}>
                             <Text size="sm">{label}</Text>
-                            <Switch size="xs" color="teal" defaultChecked={enabled} onChange={(event) => { console.log(event); fetchNui('blipVisibility', { enable: event?.currentTarget.checked, id: id }) }}/>
+                            <Switch size="xs" color="teal" defaultChecked={enabled} onChange={(event) => { fetchNui('blipVisibility', { enable: event?.currentTarget.checked, id: id }) }}/>
                         </Group>
                     ))}
                 </ScrollArea>

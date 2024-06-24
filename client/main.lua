@@ -15,7 +15,6 @@ RegisterCommand('blips', function()
 end)
 
 RegisterNuiCallback('blipVisibility', function(data)
-    print(data.id, data.enable)
     SetResourceKvp(data.id, tostring(data.enable))
     refreshBlips()
 end)
