@@ -3,7 +3,6 @@ import { DEFAULT_THEME, Divider, Paper, Text, Group, Switch, ScrollArea } from '
 import { modals } from '@mantine/modals'
 import { fetchNui } from "../utils/fetchNui"
 import { useNuiEvent } from "../hooks/useNuiEvent"
-import useStyles from '../hooks/useStyles'
 
 interface Blips {
     id: number,
@@ -12,7 +11,6 @@ interface Blips {
 }
 
 const Menu: React.FC = () => {
-    const { classes } = useStyles()
     const theme = DEFAULT_THEME
     const [blips, setBlips] = useState<Blips[]>([])
 
@@ -21,7 +19,7 @@ const Menu: React.FC = () => {
     })
 
     return (
-        <div className={classes.wrapper}>
+        <div style={{ width: '100%', height: '100%', position: 'fixed', display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
             <Paper w={350} h={600} withBorder radius="sm" style={{ margin: 15, backgroundColor: theme.colors.dark[8] }}>
                 <Text size="xl" fw={700} style={{ padding: 5 }}>Blips</Text>
                 <Divider/>
